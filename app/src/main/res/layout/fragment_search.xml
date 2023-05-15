@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchVm"
+            type="com.love.lovelive.ui.fragments.search.SearchVm" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragments.search.SearchFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/bell_icon"
+                android:id="@+id/imgBell"
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imgBell"
+                android:background="@drawable/search_bg"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/imgScore">
+
+                <ImageView
+                    android:id="@+id/imgSearch"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:src="@drawable/search_icon"
+                    app:tint="@color/white" />
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/_5sdp"
+                    android:hint="@string/search"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColorHint="@color/white"
+                    android:layout_toStartOf="@id/imgClose"
+                    android:layout_toEndOf="@id/imgSearch"
+                    android:layout_marginStart="@dimen/_3sdp"/>
+
+                <ImageView
+                    android:id="@+id/imgClose"
+                    android:layout_width="@dimen/_9sdp"
+                    android:layout_height="@dimen/_9sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:src="@drawable/img_close"
+                    app:tint="@color/white" />
+
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/score_icon"
+                android:id="@+id/imgScore"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"/>
+
+        </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            setRecyclerviewAdapter="@{searchVm.searchCategoriesAdapter}"
+            itemList="@{searchVm.categoriesList}"
+            tools:listitem="@layout/categories_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            setRecyclerviewAdapter="@{searchVm.searchLiveAdapter}"
+            itemList="@{searchVm.liveList}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/live_item"
+            app:spanCount="3"/>
+
+
+    </LinearLayout>
+</layout>
