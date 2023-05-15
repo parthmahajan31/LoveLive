@@ -103,12 +103,26 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/liveRv"
             android:orientation="vertical"
+            android:visibility="gone"
             setRecyclerviewAdapter="@{searchVm.searchLiveAdapter}"
             itemList="@{searchVm.liveList}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             tools:listitem="@layout/live_item"
             app:spanCount="3"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            setRecyclerviewAdapter="@{searchVm.hashtagsAdapter}"
+            itemList="@{searchVm.liveList}"
+            android:id="@+id/hashtagRv"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/hashtag_item"/>
+
+
 
 
     </LinearLayout>

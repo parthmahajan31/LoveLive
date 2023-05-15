@@ -11,6 +11,16 @@ import javax.inject.Inject
 
 class SearchCategoriesAdapter @Inject constructor() : DataBindingAdapter<String>(DiffCallback(), R.layout.categories_item) {
 
+    interface ClickEvent{
+        fun onClickItem(position: Int)
+    }
+
+    private var clickEvent:ClickEvent? = null
+
+    fun onClick(clickEvent: ClickEvent){
+        this.clickEvent = clickEvent
+    }
+
     var index = 0
 
     override fun onBindViewHolder(holder: DataBindingViewHolder<String>, position: Int) {
@@ -22,6 +32,7 @@ class SearchCategoriesAdapter @Inject constructor() : DataBindingAdapter<String>
         }
 
         if (index == position){
+            clickEvent?.onClickItem(position)
             binding.selectedView.visible()
             binding.txtCat.setTextColor(binding.root.context.resources.getColor(R.color.default_pink))
         }

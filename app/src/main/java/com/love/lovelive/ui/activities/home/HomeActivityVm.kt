@@ -29,10 +29,14 @@ class HomeActivityVm @Inject constructor() : ViewModel() {
 
     fun onClickSearch(view:View){
        changeFragment(R.id.searchFragment)
-        binding.imgHome.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
-        binding.txtHome.setTextColor(ContextCompat.getColor(context,R.color.black))
         binding.imgSearch.setColorFilter(ContextCompat.getColor(context, R.color.default_pink), android.graphics.PorterDuff.Mode.SRC_IN)
         binding.txtSearch.setTextColor(ContextCompat.getColor(context,R.color.default_pink))
+        binding.imgHome.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtHome.setTextColor(ContextCompat.getColor(context,R.color.black))
+        binding.imgMoments.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtMoments.setTextColor(ContextCompat.getColor(context,R.color.black))
+        binding.imgProfile.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtProfile.setTextColor(ContextCompat.getColor(context,R.color.black))
     }
 
     fun onClickHome(view: View){
@@ -41,6 +45,34 @@ class HomeActivityVm @Inject constructor() : ViewModel() {
         binding.txtSearch.setTextColor(ContextCompat.getColor(context,R.color.black))
         binding.imgHome.setColorFilter(ContextCompat.getColor(context, R.color.default_pink), android.graphics.PorterDuff.Mode.SRC_IN)
         binding.txtHome.setTextColor(ContextCompat.getColor(context,R.color.default_pink))
+        binding.imgMoments.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtMoments.setTextColor(ContextCompat.getColor(context,R.color.black))
+        binding.imgProfile.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtProfile.setTextColor(ContextCompat.getColor(context,R.color.black))
+    }
+
+    fun onClickMoments(view:View){
+        changeFragment(R.id.momentsFragment)
+        binding.imgHome.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtHome.setTextColor(ContextCompat.getColor(context,R.color.black))
+        binding.imgMoments.setColorFilter(ContextCompat.getColor(context, R.color.default_pink), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtMoments.setTextColor(ContextCompat.getColor(context,R.color.default_pink))
+        binding.imgSearch.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtSearch.setTextColor(ContextCompat.getColor(context,R.color.black))
+        binding.imgProfile.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtProfile.setTextColor(ContextCompat.getColor(context,R.color.black))
+    }
+
+    fun onClickProfile(view: View){
+        changeFragment(R.id.profileFragment)
+        binding.imgSearch.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtSearch.setTextColor(ContextCompat.getColor(context,R.color.black))
+        binding.imgProfile.setColorFilter(ContextCompat.getColor(context, R.color.default_pink), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtProfile.setTextColor(ContextCompat.getColor(context,R.color.default_pink))
+        binding.imgMoments.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtMoments.setTextColor(ContextCompat.getColor(context,R.color.black))
+        binding.imgHome.setColorFilter(ContextCompat.getColor(context, R.color.black), android.graphics.PorterDuff.Mode.SRC_IN)
+        binding.txtHome.setTextColor(ContextCompat.getColor(context,R.color.black))
     }
 
     private fun changeFragment(id :Int){
