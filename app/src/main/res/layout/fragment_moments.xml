@@ -9,6 +9,8 @@
             name="momentsVm"
             type="com.love.lovelive.ui.fragments.moments.MomentsVm" />
 
+
+
     </data>
 
     <LinearLayout
