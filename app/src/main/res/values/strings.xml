@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">LoveLive</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="love_live">Love live</string>
+    <string name="let_s_go">Let\'s go</string>
+    <string name="by_clicking_get_started_you_agree_with_how_we_process_your_data_learn_more_in_our"><![CDATA[By clicking Let\'s go, you agree with how we process your data & learn more in our]]></string>
+    <string name="privacy_policy_and_terms_of_use"><b>Privacy Policy</b> and <b>Terms of use</b></string>
+    <string name="skip">Skip</string>
+    <string name="choose_your_interest">Choose your interest</string>
+    <string name="and_get_a_free_gift">and get a free gift</string>
+    <string name="artists">Artists</string>
+    <string name="dating">Dating</string>
+    <string name="nearby">Nearby</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="live">Live</string>
+    <string name="moments">Moments</string>
+    <string name="near">Near</string>
+    <string name="follow">Follow</string>
+    <string name="for_you">For You</string>
+    <string name="priyanka_roy">Priyanka Roy</string>
+    <string name="come_on_baby">Come on baby 💕</string>
+    <string name="all">All</string>
+    <string name="liveshow">#LiveShow</string>
+    <string name="profile">Profile</string>
+    <string name="feeds">Feeds</string>
+    <string name="_17_05_2023_11_25">17/05/2023,11:25</string>
+    <string name="denis">Denis</string>
+    <string name="congratulations_iyah_for_reaching_10_million_diamonds_nhttps_www_google_com">Congratulations IYAH for reaching 10 million diamonds!\nhttps://www.google.com</string>
+    <string name="show_all_comments_823">Show all comments(823)</string>
+</resources>

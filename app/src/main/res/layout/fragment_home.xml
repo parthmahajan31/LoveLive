@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="homeVm"
+            type="com.love.lovelive.ui.fragments.home.HomeVm" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragments.home.HomeFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/bell_icon"
+                android:id="@+id/imgBell"
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imgBell"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:weightSum="3"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_toStartOf="@id/imgScore"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/near"
+                    android:layout_weight="1"
+                    android:id="@+id/txtNear"
+                    android:textSize="@dimen/_14sdp"
+                    android:onClick="@{homeVm::onClickNear}"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/follow"
+                    android:layout_weight="1"
+                    android:onClick="@{homeVm::onClickFollow}"
+                    android:id="@+id/txtFollow"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/for_you"
+                    android:onClick="@{homeVm::onClickForYou}"
+                    android:layout_weight="1"
+                    android:id="@+id/txtForYou"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/score_icon"
+                android:id="@+id/imgScore"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"/>
+
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            setRecyclerviewAdapter="@{homeVm.adapterHomeLive}"
+            itemList="@{homeVm.list}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/live_item"/>
+
+
+
+    </LinearLayout>
+</layout>
