@@ -7,7 +7,15 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.love.lovelive.ui.fragments.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            android:id="@+id/action_homeFragment_to_leaderBoardFragment"
+            app:destination="@id/leaderBoardFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.love.lovelive.ui.fragments.search.SearchFragment"
@@ -19,5 +27,21 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.love.lovelive.ui.fragments.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            android:id="@+id/action_profileFragment_to_otherUserProfileFragment"
+            app:destination="@id/otherUserProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otherUserProfileFragment"
+        android:name="com.love.lovelive.ui.fragments.otherUser.OtherUserProfileFragment"
+        android:label="OtherUserProfileFragment" />
+    <fragment
+        android:id="@+id/leaderBoardFragment"
+        android:name="com.love.lovelive.ui.fragments.home.leader.LeaderBoardFragment"
+        android:label="LeaderBoardFragment" />
 </navigation>

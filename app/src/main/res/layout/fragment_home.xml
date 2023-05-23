@@ -77,13 +77,17 @@
 
 
             <ImageView
+                android:id="@+id/imgScore"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:src="@drawable/score_icon"
-                android:id="@+id/imgScore"
                 android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:onClick="@{homeVm::onClickLeaderBoard}"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:padding="@dimen/_5sdp"
-                android:layout_margin="@dimen/_5sdp"/>
+                android:src="@drawable/score_icon" />
 
 
         </RelativeLayout>

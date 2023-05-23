@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="@dimen/_45sdp">
+        
+        <ImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:id="@+id/imgCat"
+            android:src="@drawable/picture_camera_icon"
+            app:tint="@color/grey" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="All"
+            android:text="@{model}"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/grey"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:id="@+id/txtCat"
+            />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:visibility="gone"
+            android:id="@+id/selectedView"
+            app:layout_constraintTop_toBottomOf="@id/txtCat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/black"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:id="@+id/selectedView1"
+            app:layout_constraintTop_toBottomOf="@id/txtCat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/grey"/>
+
+
+    </LinearLayout>
+</layout>

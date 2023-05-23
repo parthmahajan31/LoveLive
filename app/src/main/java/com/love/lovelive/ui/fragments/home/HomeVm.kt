@@ -46,5 +46,8 @@ class HomeVm @Inject constructor() :ViewModel() {
         binding.txtFollow.setTextColor(context.resources.getColor(R.color.black))
     }
 
+    fun onClickLeaderBoard(view: View){
+        context.moveNext(R.id.action_homeFragment_to_leaderBoardFragment)
+    }
 
 }
