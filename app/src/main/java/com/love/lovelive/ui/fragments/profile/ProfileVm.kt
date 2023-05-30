@@ -32,6 +32,5 @@ class ProfileVm @Inject constructor() : ViewModel() {
     }
 
     fun onClickOtherUser(view:View){
-        context.moveNext(R.id.action_profileFragment_to_otherUserProfileFragment)
     }
 }

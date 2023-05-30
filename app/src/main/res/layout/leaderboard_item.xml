@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/txtSno"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:id="@+id/imgUser"
+            android:src="@drawable/place_holder_1"
+            android:layout_toRightOf="@id/txtSno"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pareesha"
+            android:id="@+id/txtUser"
+            android:layout_toRightOf="@id/imgUser"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_397_372"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/black"
+            app:drawableTint="@color/black"
+            app:drawableLeftCompat="@drawable/baseline_keyboard_double_arrow_down_24" />
+
+
+    </RelativeLayout>
+</layout>

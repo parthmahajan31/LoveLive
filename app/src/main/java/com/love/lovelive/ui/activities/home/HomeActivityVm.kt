@@ -75,6 +75,10 @@ class HomeActivityVm @Inject constructor() : ViewModel() {
         binding.txtHome.setTextColor(ContextCompat.getColor(context,R.color.black))
     }
 
+    fun onClickGoLive(view: View){
+        changeFragment(R.id.goLiveFragment)
+    }
+
     private fun changeFragment(id :Int){
         val navHostFragment =
             context.supportFragmentManager.findFragmentById(R.id.home_nav_host) as NavHostFragment?

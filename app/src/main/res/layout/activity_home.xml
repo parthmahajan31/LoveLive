@@ -99,6 +99,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:onClick="@{homeActivityVm::onClickGoLive}"
                 android:orientation="vertical"
                 android:layout_weight="1">
 

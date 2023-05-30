@@ -28,13 +28,7 @@
         android:id="@+id/profileFragment"
         android:name="com.love.lovelive.ui.fragments.profile.ProfileFragment"
         android:label="ProfileFragment" >
-        <action
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"
-            app:popEnterAnim="@android:anim/fade_in"
-            app:popExitAnim="@android:anim/fade_out"
-            android:id="@+id/action_profileFragment_to_otherUserProfileFragment"
-            app:destination="@id/otherUserProfileFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/otherUserProfileFragment"
@@ -43,5 +37,17 @@
     <fragment
         android:id="@+id/leaderBoardFragment"
         android:name="com.love.lovelive.ui.fragments.home.leader.LeaderBoardFragment"
-        android:label="LeaderBoardFragment" />
+        android:label="LeaderBoardFragment" >
+        <action
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            android:id="@+id/action_leaderBoardFragment_to_otherUserProfileFragment"
+            app:destination="@id/otherUserProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/goLiveFragment"
+        android:name="com.love.lovelive.ui.fragments.goLive.GoLiveFragment"
+        android:label="GoLiveFragment" />
 </navigation>

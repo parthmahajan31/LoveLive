@@ -38,4 +38,9 @@
     <string name="dil_saaf_hoga_toh_har_gunah_maaf_hoga">Dil saaf hoga toh har gunah maaf hoga</string>
     <string name="creators">Creators</string>
     <string name="families">Families</string>
+    <string name="daily">Daily</string>
+    <string name="all_time">All Time</string>
+    <string name="pareesha">Pareesha</string>
+    <string name="_397_372">397,372</string>
+    <string name="notifications_for_followers">Notifications for followers</string>
 </resources>
