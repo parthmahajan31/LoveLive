@@ -43,4 +43,8 @@
     <string name="pareesha">Pareesha</string>
     <string name="_397_372">397,372</string>
     <string name="notifications_for_followers">Notifications for followers</string>
+    <string name="sign_up_to_broadcast">Sign Up to Broadcast</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sms">SMS</string>
+    <string name="by_logging_in_you_agree_to_our_terms_of_use_and_nprivacy_policy">By logging in,you agree to our <u><b>Terms of use</b></u> and\n<u><b>Privacy Policy</b></u></string>
 </resources>

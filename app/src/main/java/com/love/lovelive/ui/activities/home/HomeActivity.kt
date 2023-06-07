@@ -1,5 +1,6 @@
 package com.love.lovelive.ui.activities.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -7,6 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.tasks.Task
 import com.love.lovelive.R
 import com.love.lovelive.databinding.ActivityHomeBinding
 import com.love.lovelive.utils.hideIf
@@ -37,5 +41,13 @@ class HomeActivity : AppCompatActivity(), NavController.OnDestinationChangedList
     ) {
         binding.bottomNav.hideIf(destination.id !in arrayOf(R.id.homeFragment,R.id.searchFragment,R.id.momentsFragment,R.id.profileFragment))
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 100) {
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            viewModel.handleResult(task)
+        }
     }
 }

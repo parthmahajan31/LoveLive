@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1060992653653",
+    "project_id": "love-live-11a98",
+    "storage_bucket": "love-live-11a98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060992653653:android:ca18339de0a06f6a2577dc",
+        "android_client_info": {
+          "package_name": "com.love.lovelive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060992653653-nveen0vkg3v6uij54lml16qrlbc87nj8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.love.lovelive",
+            "certificate_hash": "1d944828ce70e39ab690880bb226dbe46d9597fa"
+          }
+        },
+        {
+          "client_id": "1060992653653-j95c8thdd0krqmmulu78d1lk8t3eumh9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOXMQsOKU1EMxfpUIV8Lb_L6aIg2DYJl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060992653653-j95c8thdd0krqmmulu78d1lk8t3eumh9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
