@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="signupVm"
+            type="com.love.lovelive.ui.fragments.signup.SignupVm" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.signup.SignupFragment">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:layout_margin="@dimen/_15sdp"
+            app:tint="@color/black" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_your_phone_number"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <com.hbb20.CountryCodePicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:ccp_contentColor="@color/default_pink"
+                        app:ccp_showFlag="false"
+                        app:ccp_textSize="@dimen/_13sdp"/>
+
+                </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_number"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:textSize="@dimen/_13sdp"
+                android:backgroundTint="@color/default_pink" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                android:background="@drawable/btn_round_bg"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_marginHorizontal="@dimen/_15sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sms_bg"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:id="@+id/googleSignInBtn"
+                android:layout_marginVertical="@dimen/_30sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:src="@drawable/ic_google"
+                    android:background="@drawable/google_bg"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_in_with_google"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/by_logging_in_you_agree_to_our_terms_of_use_and_privacy_policy"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_10sdp"/>
+
+    </RelativeLayout>
+</layout>

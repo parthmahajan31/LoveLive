@@ -47,4 +47,9 @@
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="sms">SMS</string>
     <string name="by_logging_in_you_agree_to_our_terms_of_use_and_nprivacy_policy">By logging in,you agree to our <u><b>Terms of use</b></u> and\n<u><b>Privacy Policy</b></u></string>
+    <string name="your_web_client_id">948122142799-gi5ikb93ff8caalmqcc9o3prnjrcpohi.apps.googleusercontent.com</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="next">Next</string>
+    <string name="by_logging_in_you_agree_to_our_terms_of_use_and_privacy_policy">By logging in,you agree to our <u><font color='#ff00df'>Terms of Use</font></u> and <u><font color='#ff00df'>Privacy Policy</font></u></string>
 </resources>

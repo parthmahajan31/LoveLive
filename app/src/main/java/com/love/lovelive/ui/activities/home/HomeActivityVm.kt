@@ -1,16 +1,9 @@
 package com.love.lovelive.ui.activities.home
 
 import LocalStorage
-import android.content.Intent
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavOptions
-import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -20,11 +13,10 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthProvider
 import com.love.lovelive.R
 import com.love.lovelive.databinding.ActivityHomeBinding
 import com.love.lovelive.databinding.SignupPopupBinding
+import com.love.lovelive.utils.CommonAlertDialog
 import dagger.hilt.android.lifecycle.HiltViewModel
 import timber.log.Timber
 import javax.inject.Inject
@@ -36,8 +28,8 @@ class HomeActivityVm @Inject constructor() : ViewModel() {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var context: HomeActivity
     private var isLogin:Boolean? = false
-    lateinit var mGoogleSignInClient: GoogleSignInClient
-    private lateinit var firebaseAuth: FirebaseAuth
+    val RC_SIGN_IN = 123
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
 
 
 
@@ -47,12 +39,9 @@ class HomeActivityVm @Inject constructor() : ViewModel() {
         onClickHome(binding.home)
         FirebaseApp.initializeApp(context)
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(context.getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-
-        mGoogleSignInClient = GoogleSignIn.getClient(context, gso)
-        firebaseAuth = FirebaseAuth.getInstance()
+        mGoogleSignInClient = GoogleSignIn.getClient(context,gso)
         isLogin = !LocalStorage.getStringValue(context,"IsLogin").isNullOrEmpty()
     }
 
@@ -121,13 +110,18 @@ class HomeActivityVm @Inject constructor() : ViewModel() {
         dialog.setContentView(dialogBinding.root)
         dialog.show()
         dialogBinding.googleSignInBtn.setOnClickListener {
+            dialog.dismiss()
             signInGoogle()
+        }
+        dialogBinding.txtSms.setOnClickListener {
+            dialog.dismiss()
+            changeFragment(R.id.signupFragment)
         }
     }
 
     private fun signInGoogle() {
-        val signInIntent: Intent = mGoogleSignInClient.signInIntent
-        context.startActivityForResult(signInIntent, 100)
+        val signInIntent = mGoogleSignInClient.signInIntent
+        context.startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
     private fun changeFragment(id :Int){
@@ -137,24 +131,31 @@ class HomeActivityVm @Inject constructor() : ViewModel() {
         context.navController?.navigate(id)
     }
 
-    fun handleResult(task: Task<GoogleSignInAccount>) {
+    fun handleSignInResult(task: Task<GoogleSignInAccount>?) {
         try {
-            val account: GoogleSignInAccount? = task.getResult(ApiException::class.java)
-            if (account != null) {
-                UpdateUI(account)
-            }
-        } catch (e: ApiException) {
-            Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show()
-        }
-    }
+            val account = task?.getResult(ApiException::class.java)
+            // Signed in successfully, show authenticated UI.
+            // You can access the user's ID, email, display name, etc. from the account object.
+            val userId = account?.id
+            val email = account?.email
+            val displayName = account?.displayName
 
-    private fun UpdateUI(account: GoogleSignInAccount) {
-        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-        firebaseAuth.signInWithCredential(credential).addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                Timber.e("Email->${account.email.toString()}")
-                Timber.e("Username->${account.displayName.toString()}")
-            }
+            Timber.e("Data->$userId,$email,$displayName")
+            CommonAlertDialog(context,"GoogleData->\nEmail->${email}\nDisplay Name->${displayName}","Ok","",object :CommonAlertDialog.OnButtonClickListener{
+                override fun onPositiveButtonClicked() {
+
+                }
+
+                override fun onNegativeButtonClicked() {
+
+                }
+
+            }).show()
+            // ...
+        } catch (e: ApiException) {
+            // Sign-in failed, handle the error.
+            // ...
+            Timber.e("Exception->${e.message}")
         }
     }
 

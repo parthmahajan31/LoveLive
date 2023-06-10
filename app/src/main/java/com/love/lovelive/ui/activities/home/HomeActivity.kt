@@ -10,6 +10,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.tasks.Task
 import com.love.lovelive.R
 import com.love.lovelive.databinding.ActivityHomeBinding
@@ -22,6 +23,8 @@ class HomeActivity : AppCompatActivity(), NavController.OnDestinationChangedList
     private lateinit var binding :ActivityHomeBinding
     var navController: NavController? = null
     private val viewModel:HomeActivityVm by viewModels()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +48,9 @@ class HomeActivity : AppCompatActivity(), NavController.OnDestinationChangedList
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 100) {
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-            viewModel.handleResult(task)
+        if (requestCode == viewModel.RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            viewModel.handleSignInResult(task)
         }
     }
 }

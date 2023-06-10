@@ -56,6 +56,7 @@
             android:text="@string/sms"
             android:textSize="@dimen/_12sdp"
             android:layout_gravity="center"
+            android:id="@+id/txtSms"
             android:paddingHorizontal="@dimen/_35sdp"
             android:paddingVertical="@dimen/_8sdp"
             android:layout_margin="@dimen/_5sdp"

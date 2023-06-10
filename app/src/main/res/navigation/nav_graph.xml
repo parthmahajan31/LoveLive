@@ -50,4 +50,8 @@
         android:id="@+id/goLiveFragment"
         android:name="com.love.lovelive.ui.fragments.goLive.GoLiveFragment"
         android:label="GoLiveFragment" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.love.lovelive.ui.fragments.signup.SignupFragment"
+        android:label="SignupFragment" />
 </navigation>
