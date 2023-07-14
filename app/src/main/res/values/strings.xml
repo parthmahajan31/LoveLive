@@ -52,4 +52,11 @@
     <string name="phone_number">Phone Number</string>
     <string name="next">Next</string>
     <string name="by_logging_in_you_agree_to_our_terms_of_use_and_privacy_policy">By logging in,you agree to our <u><font color='#ff00df'>Terms of Use</font></u> and <u><font color='#ff00df'>Privacy Policy</font></u></string>
+    <string name="code_sent_to">Code sent to</string>
+    <string name="_91_9999999999">91 9999999999</string>
+    <string name="enter_code">Enter Code</string>
+    <string name="didn_t_receive_sms_try_again"><u>Didn\'t Receive SMS? Try Again</u></string>
+    <string name="edit_phone_number"><u>Edit phone number</u></string>
+    <string name="contact_support"><u>Contact Support</u></string>
+    <string name="end_live">End Live</string>
 </resources>

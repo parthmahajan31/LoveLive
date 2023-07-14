@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.google.gson.Gson
 import com.love.lovelive.retrofit.EndPoints
 import dagger.hilt.android.HiltAndroidApp
+import im.zego.zegoexpress.ZegoExpressEngine
+import im.zego.zegoexpress.constants.ZegoScenario
+import im.zego.zegoexpress.entity.ZegoEngineProfile
 import io.socket.client.IO
 import io.socket.client.Socket
 import timber.log.Timber
@@ -48,8 +51,10 @@ class MyApplication : Application() {
         super.onCreate()
         application = this
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
 //        Places.initialize(this, getString(R.string.api_key), Locale.US)
         mSocket?.connect()
+        createEngine()
         initTimber()
     }
 
@@ -59,6 +64,25 @@ class MyApplication : Application() {
 
     fun getSocket(): Socket? {
         return mSocket
+    }
+
+    fun createEngine() {
+        val profile = ZegoEngineProfile()
+
+        // Get your AppID and AppSign from ZEGOCLOUD Console
+        //[My Projects -> AppID] : https://console.zegocloud.com/project
+        profile.appID = 1391748957
+        profile.appSign = "f4031b28e83a9d1b2c54c17a5703ffb8638854ef0560825951b38f83d71b0238"
+        profile.scenario = ZegoScenario.BROADCAST // General scenario.
+        profile.application = this
+        ZegoExpressEngine.createEngine(profile,null)
+
+    }
+
+
+    // destroy engine
+    fun destroyEngine() {
+        ZegoExpressEngine.destroyEngine(null)
     }
 
 

@@ -3,13 +3,15 @@ package com.love.lovelive.retrofit
 object EndPoints {
 
 
-    const val BaseURL = "http://api.shareme.alcax.com/"
+    const val BaseURL = "http://62.112.8.15:4012/v1/"
 
     const val SOCKET_URL = "http://shareme.alcax.com:7963"
 
     const val LOVE_LIVE ="love_live"
 
     const val DEVICE_TOKEN_PREF = "device_token"
+
+    const val LOGIN_SIGNUP = "user"
 
    /* const val REGISTER = "auth/register"
     const val VERIFY_OTP = "auth/verifyotp"

@@ -32,12 +32,14 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+
     }
 
     buildFeatures {
         dataBinding true
         viewBinding true
     }
+
 }
 
 dependencies {
@@ -137,4 +139,10 @@ dependencies {
     implementation 'androidx.camera:camera-lifecycle:1.0.2'
     implementation "androidx.camera:camera-camera2:1.0.2"
 
+    implementation 'im.zego:express-video:3.6.0'
+
+    //Phone Auth
+
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
 }

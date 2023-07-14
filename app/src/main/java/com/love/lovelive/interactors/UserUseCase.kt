@@ -1,5 +1,7 @@
 package com.love.lovelive.interactors
 
+import com.love.lovelive.models.request.LoginSignupRequest
+import com.love.lovelive.models.response.ProfileModel
 import com.love.lovelive.retrofit.AppApiServices
 import com.love.lovelive.utils.apiRequest
 import kotlinx.coroutines.flow.Flow
@@ -377,6 +379,20 @@ class UserUseCase constructor(private val networkDataSource:AppApiServices) {
         }
         emit(data)
     }*/
+
+    suspend fun loginSignup( loginSignupRequest: LoginSignupRequest):Flow<Resource<ProfileModel>?> = flow {
+        val data = apiRequest {
+            networkDataSource.loginSignup(loginSignupRequest)
+        }
+        emit(data)
+    }
+
+    suspend fun getProfile():Flow<Resource<ProfileModel>?> = flow {
+        val data = apiRequest {
+            networkDataSource.getProfile()
+        }
+        emit(data)
+    }
 
 
 

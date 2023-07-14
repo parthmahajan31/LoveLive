@@ -1,6 +1,8 @@
 package com.love.lovelive.retrofit
 
 import com.love.lovelive.interactors.ApiResponse
+import com.love.lovelive.models.request.LoginSignupRequest
+import com.love.lovelive.models.response.ProfileModel
 import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -16,6 +18,11 @@ interface AppApiServices {
      */
 
     //    suspend fun login(param: LoginRequest): Response<ApiResponse<LoginResponse>>
+
+    suspend fun loginSignup(loginSignupRequest: LoginSignupRequest):Response<ApiResponse<ProfileModel>>
+
+    suspend fun getProfile():Response<ApiResponse<ProfileModel>>
+
 
 
 
